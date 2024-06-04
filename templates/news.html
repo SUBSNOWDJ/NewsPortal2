@@ -1,0 +1,20 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+<!-- Название у нас будет Product -->
+{% block title %}
+Новость
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим сам товар, идентификатор которого был передан в url -->
+{% block content %}
+<td>{{ news.created_time }}</td>
+<p>&nbsp;</p>
+<td>{{ news.category.name|currency }}</td>
+<p>&nbsp;</p>
+<td>{{ news.name|currency }}</td>
+<p>&nbsp;</p>
+<td>{{ news.description|currency}}</td>
+{% endblock content %}
